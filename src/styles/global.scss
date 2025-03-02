@@ -1,12 +1,24 @@
-:root {
-  --system-ui:
-    system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
+@use './normalize';
+@use './typography';
+@use './color-variables';
+@use './layout';
+@use '@/components/SocialLinks/SocialLinks.scss';
+@use '@/components/Footer/Footer.scss';
 
 body {
-  font-family: var(--system-ui);
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

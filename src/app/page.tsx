@@ -1,10 +1,9 @@
-import styles from '@/styles/Home.module.scss';
+import HomeBanner from './home/HomeBanner';
 
 export default function Home() {
   return (
-    <main className={styles.hero}>
-      <h1>Ryan C. Perry</h1>
-      <p>Web Developer from Middleton, WI</p>
+    <main>
+      <HomeBanner />
     </main>
   );
 }

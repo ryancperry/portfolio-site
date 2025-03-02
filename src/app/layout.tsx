@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import Navbar from '@/components/Navbar';
+import '@/styles/global.scss';
+import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Ryan C. Perry',
@@ -16,7 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="body">
         <Navbar />
-        {children}
+        <div className="page-content">{children}</div>
+        <Footer />
       </body>
     </html>
   );

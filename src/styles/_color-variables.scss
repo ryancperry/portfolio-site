@@ -1,0 +1,65 @@
+@use 'sass:color';
+
+@mixin color-variant($color-name, $color) {
+  --#{$color-name}: #{$color};
+  --#{$color-name}-darker: #{color.mix($color, #000, $weight: 75%)};
+  --#{$color-name}-light: #{color.mix($color, #fff, $weight: 75%)};
+  --#{$color-name}-lighter: #{color.mix($color, #fff, $weight: 50%)};
+  --#{$color-name}-lightest: #{color.mix($color, #fff, $weight: 25%)};
+}
+
+@mixin opacity-variant($color-name, $color) {
+  @for $i from 1 through 19 {
+    --#{$color-name}-#{$i * 5}: #{rgba($color, $i * 5%)};
+  }
+}
+
+@mixin shade-variant($color-name, $color) {
+  @for $i from 1 through 9 {
+    --#{$color-name}-#{$i * 100}: #{color.mix(
+        $color,
+        #000000,
+        $weight: 100 - $i * 10%
+      )};
+  }
+}
+
+@mixin tint-variant($color-name, $color) {
+  @for $i from 1 through 9 {
+    --#{$color-name}-#{$i * 100}: #{color.mix(
+        $color,
+        #ffffff,
+        $weight: 100 - $i * 10%
+      )};
+  }
+}
+
+$colors: (
+  dark-navy: #18121e,
+  warning-yellow: #eac67a,
+  css-blue: #264de4,
+  facebook-blue: #3b5998,
+  google-red: #d34836,
+  html-orange: #e34f26,
+  instagram-blue: #517fa4,
+  js-black: #323330,
+  js-yellow: #f0db4f,
+  linkedin-blue: #007bb6,
+  pinterest-red: #cb2027,
+  rails-red: #c00,
+  react-blue: #00d8ff,
+  sass-magenta: #c69,
+  twitter-blue: #00aced,
+  youtube-red: #bb0000,
+);
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+  @include shade-variant('gray', #f2f2f2);
+  @include color-variant(color-primary, #233237);
+  @include color-variant(color-secondary, #984b43);
+  @include opacity-variant('black', #000000);
+  @include opacity-variant('white', #ffffff);
+}
