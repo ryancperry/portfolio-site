@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/global.scss';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Ryan C. Perry',
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Navbar />
         <div className="page-content">{children}</div>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
