@@ -7,8 +7,9 @@
   color: white;
 
   .navbar__logo a {
-    font-size: 1.25rem;
-    font-weight: bold;
+    display: flex;
+    max-width: 5rem;
+    max-height: 2rem;
     color: white;
     text-decoration: none;
   }
@@ -45,6 +46,7 @@
 
       &[data-current='true'],
       &:hover {
+
         &::before,
         &::after {
           width: 50%;

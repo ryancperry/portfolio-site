@@ -1,4 +1,4 @@
-import { CodePen, GitHub, LinkedIn, Mail } from '@/components/svgs/socialIcons';
+import { CodePen, GitHub, LinkedIn, Mail } from '@/components/svgs/SocialIcons';
 
 const contactLinks = [
   {
