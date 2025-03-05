@@ -1,4 +1,6 @@
 .body {
+  background: #f8f9fa; // Light background
+  background: linear-gradient(135deg, #f8f9fa, #e2e8f0);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;

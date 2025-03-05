@@ -13,11 +13,11 @@ export default function Navbar() {
           <Logo />
         </Link>
       </div>
-      <ul className={styles.navbar__list}>
+      {/* <ul className={styles.navbar__list}>
         <li>
           <NavbarLink href="/about">About</NavbarLink>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 }
