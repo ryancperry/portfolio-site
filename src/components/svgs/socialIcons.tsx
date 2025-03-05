@@ -1,4 +1,4 @@
-const CodePen = () => (
+const CodePenIcon = () => (
   <svg
     className="icon_codepen"
     xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ const CodePen = () => (
   </svg>
 );
 
-const GitHub = () => (
+const GitHubIcon = () => (
   <svg
     className="icon_github"
     xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const GitHub = () => (
   </svg>
 );
 
-const LinkedIn = () => (
+const LinkedInIcon = () => (
   <svg
     className="icon_linkedin"
     xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const LinkedIn = () => (
   </svg>
 );
 
-const Mail = () => (
+const MailIcon = () => (
   <svg
     className="icon_mail"
     xmlns="http://www.w3.org/2000/svg"
@@ -42,4 +42,4 @@ const Mail = () => (
   </svg>
 );
 
-export { CodePen, GitHub, LinkedIn, Mail };
+export { CodePenIcon, GitHubIcon, LinkedInIcon, MailIcon };
