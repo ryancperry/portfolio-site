@@ -15,7 +15,7 @@ const SocialItem: React.FC<SocialItemProps> = ({ socialItem }) => {
   const rel = type === 'mail' ? '' : 'noopener noreferrer';
 
   return (
-    <li className="social-links__item" key={name}>
+    <li className="social-links__item" key={`social-item-${name}`}>
       <a className="social-links__link" href={link} rel={rel} target={target}>
         {icon}
         <span className="social-links__text">{name}</span>
