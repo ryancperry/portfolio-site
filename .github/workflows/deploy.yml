@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - staging # Added staging branch for preview deployment
 
 jobs:
   deploy:
@@ -14,4 +15,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Trigger Vercel Deployment
-        run: curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_7W4bOXQVkRSj1CNrNs44oHYvQdJ1/uOVBPziB5H"
+        run: curl -X POST "{{ secrets.VERCEL_HOOK_URL }}"
