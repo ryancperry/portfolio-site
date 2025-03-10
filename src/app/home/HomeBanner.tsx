@@ -11,7 +11,7 @@ export default function HomeBanner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Hi, I'm Ryan C. Perry
+          Hi, I‘m Ryan C. Perry
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
