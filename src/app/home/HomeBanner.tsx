@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styles from './Home.module.scss';
 
 export default function HomeBanner() {
+  console.log('Security updated');
   return (
     <header className={styles.banner}>
       <div className={styles.content}>
