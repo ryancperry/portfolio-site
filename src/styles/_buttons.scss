@@ -1,0 +1,73 @@
+$bg: #1b263b;
+$light-shadow: lighten($bg, 10%); // for top-left highlight
+$dark-shadow: darken($bg, 10%); // for bottom-right shadow
+
+.button {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button--neumorphic-dark {
+  background: var(--color-primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    -3px -3px 3px $light-shadow, // top-left light
+    4px 4px 8px $dark-shadow; // bottom-right dark
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      -2px -2px 4px $light-shadow,
+      2px 2px 4px $dark-shadow;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    box-shadow:
+      inset 2px 2px 4px $dark-shadow,
+      inset -2px -2px 4px $light-shadow;
+    transform: translateY(1px);
+  }
+}
+
+.text-link {
+  display: inline-block;
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+  letter-spacing: 0.05rem;
+  opacity: 80%;
+  padding-bottom: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.1s ease-in-out;
+
+  &:focus,
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.link__arrow--external,
+.link__arrow--internal {
+  font-weight: 600;
+}
+
+.link__arrow--external::after,
+.link__arrow--internal::after {
+  display: inline-block;
+  padding-left: 0.25rem;
+}
+
+.link__arrow--external::after {
+  content: '↗';
+}
+
+.link__arrow--internal::after {
+  content: '→';
+}

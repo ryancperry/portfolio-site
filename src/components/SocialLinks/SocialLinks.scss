@@ -7,13 +7,32 @@
 }
 
 .social-links__link {
+  border-radius: 50%;
+  box-shadow:
+    0.25rem 0.25rem .5rem var(--gray-100),
+    -0.25rem -0.25rem .5rem 0 var(--white-95),
+    inset 0 0 0 var(--gray-100),
+    inset 0 0 0 var(--white-95);
+  color: var(--color-primary-light);
   display: grid;
   align-items: center;
-  gap: 0.5rem;
-  grid-template-columns: auto 1fr;
+  justify-content: center;
+  height: 2.5rem;
+  transition: all 0.1s ease-in-out;
+  width: 2.5rem;
 
   svg {
     fill: currentColor;
     max-width: 1.25rem;
   }
+}
+
+.social-links__link:focus,
+.social-links__link:hover {
+  box-shadow:
+    0 0 0 var(--gray-100),
+    0 0 0 var(--white-95),
+    inset 0.125rem 0.125rem .25rem var(--gray-100),
+    inset -0.125rem -0.125rem .25rem var(--white-95);
+  color: var(--color-primary);
 }

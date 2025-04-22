@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 :root {
   --system-ui:
     system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -15,10 +17,12 @@ a,
 i {
   color: inherit;
 }
+
 a:hover,
 button:hover {
   cursor: pointer;
 }
+
 h1,
 h2,
 h3,
@@ -28,30 +32,50 @@ h6 {
   color: inherit;
   font-family: inherit;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   margin-top: 0;
 }
 
+@include generate-font-scale(1rem, 1.125, 1.2, 6, 2, 768px);
+@include generate-font-size-aliases(3, 6, 'heading');
+@include generate-font-size-classes(4, 6, 'heading');
+@include generate-font-size-classes(4, 3, 'subheading');
+@include generate-font-size-classes(3, 3, 'list__heading');
+
 h1 {
-  font-size: 2.5rem;
+  font-size: var(--heading-xxl);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: var(--heading-xl);
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: var(--heading-lg);
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: var(--heading-md);
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: var(--heading-sm);
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: var(--heading-xs);
+}
+
+.subheading--lg,
+.subheading--md {
+  font-weight: 300;
+}
+
+p {
+  line-height: 1.5;
+}
+
+p a {
+  font-weight: 600;
+  text-decoration: underline;
 }

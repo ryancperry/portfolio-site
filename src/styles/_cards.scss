@@ -1,0 +1,80 @@
+.card {
+  background: var(--white-90);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow:
+    0.5rem 0.5rem 1rem var(--black-15),
+    -0.5rem -0.5rem 1rem var(--white-95),
+    inset 0 0 0 var(--black-15),
+    inset 0 0 0 var(--white-95);
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.card:focus,
+.card:hover {
+  box-shadow:
+    0 0 0 var(--black-15),
+    0 0 0 var(--white-95),
+    inset 0.25rem 0.25rem 0.5rem var(--black-15),
+    inset -0.25rem -0.25rem 0.5rem var(--white-95);
+}
+
+.card__link {
+  color: var(--color-primary);
+  margin-left: 0.5rem;
+}
+
+.card__headline {
+  font-size: var(--font-size-4);
+  margin-bottom: 0.25rem;
+}
+
+.card__subheadline {
+  font-size: var(--font-size-2);
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+
+.card__text {
+  font-size: var(--font-size-2);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.cards-section__section {
+  padding: 2rem 0;
+}
+
+.cards-section__text {
+  font-size: var(--font-size-2);
+  margin-bottom: 2rem;
+}
+
+
+@media (min-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card__text {
+    font-size: 0.95rem;
+  }
+
+  .card__subheadline {
+    font-size: var(--font-size-3);
+  }
+
+  .cards-section__section {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    padding: 4rem 0;
+  }
+
+  .cards-section__header {
+    align-self: start;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+  }
+}

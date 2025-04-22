@@ -1,41 +1,14 @@
 @use 'sass:color';
-
-@mixin color-variant($color-name, $color) {
-  --#{$color-name}: #{$color};
-  --#{$color-name}-darker: #{color.mix($color, #000, $weight: 75%)};
-  --#{$color-name}-light: #{color.mix($color, #fff, $weight: 75%)};
-  --#{$color-name}-lighter: #{color.mix($color, #fff, $weight: 50%)};
-  --#{$color-name}-lightest: #{color.mix($color, #fff, $weight: 25%)};
-}
-
-@mixin opacity-variant($color-name, $color) {
-  @for $i from 1 through 19 {
-    --#{$color-name}-#{$i * 5}: #{rgba($color, $i * 5%)};
-  }
-}
-
-@mixin shade-variant($color-name, $color) {
-  @for $i from 1 through 9 {
-    --#{$color-name}-#{$i * 100}: #{color.mix(
-        $color,
-        #000000,
-        $weight: 100 - $i * 10%
-      )};
-  }
-}
-
-@mixin tint-variant($color-name, $color) {
-  @for $i from 1 through 9 {
-    --#{$color-name}-#{$i * 100}: #{color.mix(
-        $color,
-        #ffffff,
-        $weight: 100 - $i * 10%
-      )};
-  }
-}
+@use './mixins' as *;
 
 $colors: (
+  bg-light: #ecf0f3,
   dark-navy: #18121e,
+  color-primary: #1b263b,
+  color-primary-dark: #0d1b2a,
+  color-primary-light: #415a77,
+  color-primary-lighter: #778da9,
+  color-secondary: #e0e1dd,
   warning-yellow: #eac67a,
   css-blue: #264de4,
   facebook-blue: #3b5998,
@@ -51,15 +24,18 @@ $colors: (
   sass-magenta: #c69,
   twitter-blue: #00aced,
   youtube-red: #bb0000,
+  'white': #ffffff,
+  'black': #000000,
+  text-dark: #333333,
+  text-light: #f2f2f2,
 );
 
 :root {
   @each $name, $color in $colors {
     --#{$name}: #{$color};
   }
+
   @include shade-variant('gray', #f2f2f2);
-  @include color-variant(color-primary, #233237);
-  @include color-variant(color-secondary, #984b43);
   @include opacity-variant('black', #000000);
   @include opacity-variant('white', #ffffff);
 }

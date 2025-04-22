@@ -1,1 +1,145 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+
 // COLOR MIXINS
+@mixin color-variant($color-name, $color) {
+  --#{$color-name}: #{$color};
+  --#{$color-name}-darker: #{color.mix($color, #000, $weight: 75%)};
+  --#{$color-name}-light: #{color.mix($color, #fff, $weight: 75%)};
+  --#{$color-name}-lighter: #{color.mix($color, #fff, $weight: 50%)};
+  --#{$color-name}-lightest: #{color.mix($color, #fff, $weight: 25%)};
+}
+
+@mixin opacity-variant($color-name, $color) {
+  @for $i from 1 through 19 {
+    --#{$color-name}-#{$i * 5}: #{rgba($color, $i * 5%)};
+  }
+}
+
+@mixin shade-variant($color-name, $color) {
+  @for $i from 1 through 9 {
+    --#{$color-name}-#{$i * 100}: #{color.mix(
+ $color,
+    #000000,
+    $weight: 100 - $i * 10%)
+  }
+
+  ;
+}
+}
+
+@mixin tint-variant($color-name, $color) {
+  @for $i from 1 through 9 {
+    --#{$color-name}-#{$i * 100}: #{color.mix(
+ $color,
+    #ffffff,
+    $weight: 100 - $i * 10%)
+  }
+
+  ;
+}
+}
+
+// TYPOGRAPHY MIXINS
+$semantic-names: (
+  xxxs,
+  xxs,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  xxl,
+  xxxl
+);
+
+@mixin generate-font-scale($base: 1rem,
+  $mobile-scale: 1.1,
+  $desktop-scale: 1.2,
+  $steps-up: 6,
+  $steps-down: 2,
+  $breakpoint: 768px) {
+  :root {
+
+    // Smaller sizes (same for all viewports)
+    @for $i from $steps-down through 1 {
+      $index: $steps-down - $i + 1;
+      $power: -1 * $i;
+      $size: $base * pow($mobile-scale, $power);
+      --font-size-#{$index}: #{$size};
+    }
+
+    // Base size
+    --font-size-#{$steps-down + 1}: #{$base};
+
+    // Larger sizes (mobile)
+    @for $i from 1 through $steps-up {
+      $index: $steps-down + 1 + $i;
+      $size: $base * pow($mobile-scale, $i);
+      --font-size-#{$index}: #{$size};
+    }
+  }
+
+  // Desktop overrides
+  @media (min-width: #{$breakpoint}) {
+    :root {
+      @for $i from 1 through $steps-up {
+        $index: $steps-down + 1 + $i;
+        $desktop-size: $base * pow($desktop-scale, $i);
+        --font-size-#{$index}: #{$desktop-size};
+      }
+    }
+  }
+}
+
+@mixin generate-font-size-aliases($start: 1, $count: 1, $prefix: 'heading') {
+  $name-count: list.length($semantic-names);
+  $half: math.floor(calc($count / 2));
+
+  $start-index: if($count % 2==0,
+      list.index($semantic-names, md) - $half + 1,
+      list.index($semantic-names, md) - $half );
+
+  :root {
+    @for $i from 0 through ($count - 1) {
+      $font-step: $start + $i;
+      $name-position: $start-index + $i;
+
+      // Default fallback
+      $size-name: size-#{$font-step};
+
+      // Try to get name from list
+      @if $name-position >=1 and $name-position <=$name-count {
+        $size-name: list.nth($semantic-names, $name-position);
+      }
+
+      --#{$prefix}-#{$size-name}: var(--font-size-#{$font-step});
+    }
+  }
+}
+
+@mixin generate-font-size-classes($start: 1, $count: 1, $prefix: 'heading') {
+  $name-count: list.length($semantic-names);
+  $half: math.floor(calc($count / 2));
+
+  $start-index: if($count % 2==0,
+      list.index($semantic-names, md) - $half + 1,
+      list.index($semantic-names, md) - $half );
+
+  @for $i from 0 through ($count - 1) {
+    $font-step: $start + $i;
+    $name-position: $start-index + $i;
+
+    // Default fallback
+    $size-name: size-#{$font-step};
+
+    @if $name-position >=1 and $name-position <=$name-count {
+      $size-name: list.nth($semantic-names, $name-position);
+    }
+
+    .#{$prefix}--#{$size-name} {
+      font-size: var(--font-size-#{$font-step});
+    }
+  }
+}
