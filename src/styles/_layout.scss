@@ -3,7 +3,8 @@ html {
 }
 
 .body {
-  background: var(--bg-dark); // Light background
+  background: var(--bg-light);
+  color: var(--text-dark);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;

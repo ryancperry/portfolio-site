@@ -1,6 +1,8 @@
+@use "sass:color";
+
 $bg: #1b263b;
-$light-shadow: lighten($bg, 10%); // for top-left highlight
-$dark-shadow: darken($bg, 10%); // for bottom-right shadow
+$light-shadow: color.adjust($bg, $lightness: 10%); // for top-left highlight
+$dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
 
 .button {
   border-radius: 0.75rem;
