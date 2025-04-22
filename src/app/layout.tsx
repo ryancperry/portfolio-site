@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Ryan C. Perry - Developer',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://ryancperry.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: "Screenshot of Ryan C. Perry's portfolio website",
