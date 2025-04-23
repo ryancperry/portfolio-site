@@ -5,13 +5,14 @@ import { Heading } from '@/components/Headings';
 export default function AboutBanner() {
   return (
     <section className="banner" id="about">
-      <Image
+      {/* <Image
         className="banner__background"
         fill
         src={bgImage}
         alt=""
         priority={true}
-      />
+      /> */}
+      <div className="banner__background bg--hex" />
       <div className="banner__container container--inner">
         <header>
           <Heading as="h2" level={2}>

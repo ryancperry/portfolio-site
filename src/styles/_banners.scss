@@ -10,24 +10,29 @@
 }
 
 .banner__background {
+  position: absolute;
   pointer-events: none;
-  object-fit: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100%;
   width: 100%;
   opacity: 0.15;
   z-index: 0;
 }
 
+.bg--hex {
+  background-image: url(../../public/hexigonal-background-min.png);
+}
+
 .banner__container {
-  align-items: center;
   display: grid;
   grid-column-gap: 2rem;
   z-index: 1;
 }
 
 .banner__text-container {
-  grid-row: span 2;
-
   p {
     color: var(--white);
     font-size: var(--font-size-3);
@@ -48,6 +53,10 @@
 @media (width >=768px) {
   .banner {
     padding: 8rem 0 10rem;
+
+    header {
+      padding: 3rem 0;
+    }
   }
 
   .banner__container {
@@ -63,8 +72,6 @@
   }
 
   .banner__text-container {
-    grid-row: span 2;
-
     p {
       font-size: var(--font-size-4);
     }

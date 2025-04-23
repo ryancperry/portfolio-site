@@ -14,6 +14,34 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
   text-decoration: none;
 }
 
+.button--neumorphic {
+  background: var(--white-90);
+  border: 0 none;
+  color: var(--color-primary);
+  box-shadow:
+    0.25rem 0.25rem 0.5rem var(--gray-100),
+    -0.25rem -0.25rem 0.5rem var(--white-95),
+    inset 0 0 0 var(--black-15),
+    inset 0 0 0 var(--white-95);
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.button--neumorphic:hover {
+  box-shadow:
+    0.125rem 0.125rem 0.25rem var(--gray-100),
+    -0.125rem -0.125rem 0.25rem var(--white-95),
+    inset 0 0 0 var(--black-15),
+    inset 0 0 0 var(--white-95);
+}
+
+.button--neumorphic:active {
+  box-shadow:
+    0 0 0 var(--black-15),
+    0 0 0 var(--white-95),
+    inset 0.25rem 0.25rem 0.5rem var(--black-15),
+    inset -0.25rem -0.25rem 0.5rem var(--white-95);
+}
+
 .button--neumorphic-dark {
   background: var(--color-primary);
   color: var(--white);

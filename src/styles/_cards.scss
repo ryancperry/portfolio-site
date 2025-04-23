@@ -10,7 +10,6 @@
   transition: box-shadow 0.1s ease-in-out;
 }
 
-.card:focus,
 .card:hover {
   box-shadow:
     0 0 0 var(--black-15),
@@ -48,6 +47,13 @@
 .cards-section__text {
   font-size: var(--font-size-2);
   margin-bottom: 2rem;
+}
+
+.cards-section__buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 
