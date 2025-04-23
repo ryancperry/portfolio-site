@@ -50,6 +50,7 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
   box-shadow:
     -3px -3px 3px $light-shadow, // top-left light
     4px 4px 8px $dark-shadow; // bottom-right dark
+
   transition: all 0.2s ease;
 
   &:hover {
@@ -70,16 +71,16 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
 .text-link {
   display: inline-block;
   font-weight: 600;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid currentcolor;
   letter-spacing: 0.05rem;
-  opacity: 80%;
+  opacity: 0.8;
   padding-bottom: 0.25rem;
   text-decoration: none;
   transition: opacity 0.1s ease-in-out;
 
   &:focus,
   &:hover {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 

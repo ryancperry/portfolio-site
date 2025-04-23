@@ -5,10 +5,10 @@
 @use './layout';
 @use './cards';
 @use './banners';
-@use '@/components/SocialLinks/SocialLinks.scss';
-@use '@/components/Footer/Footer.scss';
-@use '@/components/Navbar/Navbar.scss';
-@use '@/components/Lists/Lists.scss';
+@use '@/components/SocialLinks/SocialLinks';
+@use '@/components/Footer/Footer';
+@use '@/components/Navbar/Navbar';
+@use '@/components/Lists/Lists';
 
 body {
   margin: 0;

@@ -1,17 +1,8 @@
-import Image from 'next/image';
-import bgImage from '../../../public/hexigonal-background-min.png';
 import { Heading } from '@/components/Headings';
 
 export default function AboutBanner() {
   return (
     <section className="banner" id="about">
-      {/* <Image
-        className="banner__background"
-        fill
-        src={bgImage}
-        alt=""
-        priority={true}
-      /> */}
       <div className="banner__background bg--hex" />
       <div className="banner__container container--inner">
         <header>
@@ -43,14 +34,6 @@ export default function AboutBanner() {
             maintainable, and built to scale.
           </p>
         </div>
-        {/* <div className="banner__cta-container">
-          <a className="text-link link__arrow--internal" href="#experience">
-            Experience
-          </a>
-          <a className="text-link link__arrow--internal" href="#projects">
-            Projects
-          </a>
-        </div> */}
       </div>
     </section>
   );

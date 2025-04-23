@@ -23,7 +23,7 @@
 }
 
 .bg--hex {
-  background-image: url(../../public/hexigonal-background-min.png);
+  background-image: url("../../public/hexigonal-background-min.png");
 }
 
 .banner__container {
@@ -43,8 +43,7 @@
 .banner__cta-container {
   align-items: center;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 2rem;
   padding-top: 2rem;
   justify-content: center;

@@ -21,7 +21,7 @@
   @for $i from 1 through 9 {
     --#{$color-name}-#{$i * 100}: #{color.mix(
  $color,
-    #000000,
+    #000,
     $weight: 100 - $i * 10%)
   }
 
@@ -33,7 +33,7 @@
   @for $i from 1 through 9 {
     --#{$color-name}-#{$i * 100}: #{color.mix(
  $color,
-    #ffffff,
+    #fff,
     $weight: 100 - $i * 10%)
   }
 
@@ -61,12 +61,12 @@ $semantic-names: (
   $steps-down: 2,
   $breakpoint: 768px) {
   :root {
-
     // Smaller sizes (same for all viewports)
     @for $i from $steps-down through 1 {
       $index: $steps-down - $i + 1;
       $power: -1 * $i;
       $size: $base * pow($mobile-scale, $power);
+
       --font-size-#{$index}: #{$size};
     }
 
@@ -77,6 +77,7 @@ $semantic-names: (
     @for $i from 1 through $steps-up {
       $index: $steps-down + 1 + $i;
       $size: $base * pow($mobile-scale, $i);
+
       --font-size-#{$index}: #{$size};
     }
   }
@@ -87,6 +88,7 @@ $semantic-names: (
       @for $i from 1 through $steps-up {
         $index: $steps-down + 1 + $i;
         $desktop-size: $base * pow($desktop-scale, $i);
+
         --font-size-#{$index}: #{$desktop-size};
       }
     }
@@ -96,7 +98,6 @@ $semantic-names: (
 @mixin generate-font-size-aliases($start: 1, $count: 1, $prefix: 'heading') {
   $name-count: list.length($semantic-names);
   $half: math.floor(calc($count / 2));
-
   $start-index: if($count % 2==0,
       list.index($semantic-names, md) - $half + 1,
       list.index($semantic-names, md) - $half );
@@ -122,7 +123,6 @@ $semantic-names: (
 @mixin generate-font-size-classes($start: 1, $count: 1, $prefix: 'heading') {
   $name-count: list.length($semantic-names);
   $half: math.floor(calc($count / 2));
-
   $start-index: if($count % 2==0,
       list.index($semantic-names, md) - $half + 1,
       list.index($semantic-names, md) - $half );

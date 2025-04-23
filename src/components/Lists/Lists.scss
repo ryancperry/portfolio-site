@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .list__item {
     font-size: var(--font-size-2);
   }

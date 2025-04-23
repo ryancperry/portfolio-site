@@ -5,7 +5,14 @@ import {
   MailIcon,
 } from '@/components/svgs/socialIcons';
 
-const contactLinks = [
+interface ContactLink {
+  name: string;
+  icon: React.ReactNode;
+  link: string;
+  type: 'external' | 'mail';
+}
+
+const contactLinks: ContactLink[] = [
   {
     name: 'CodePen',
     icon: CodePenIcon(),
