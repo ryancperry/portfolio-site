@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div className="divider--horizontal"></div>
         <FooterSocialLinks />
         <p>&copy;{currentYear} Ryan C. Perry. All rights reserved.</p>
         <p>

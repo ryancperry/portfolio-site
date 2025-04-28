@@ -1,0 +1,25 @@
+.success-icon--neumorphic {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: #28a745;
+  animation: pop 0.4s ease-out;
+  margin-left: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

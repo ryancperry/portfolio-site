@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useToggleList } from '@/hooks/useToggleList';
 import { List, ListItem } from '@/components/Lists';
 import CardLink from '@/components/Card/CardLink';
@@ -20,9 +21,8 @@ export default function ProjectSection() {
         <p className="cards-section__text">
           Here are a variety of projects I have worked on with a list of some of
           the features and technologies.{' '}
-          <a href="mailto:perry.ryan.c@gmail.com">Email me</a> if you have any
-          questions or if you would like to know about other types of projects I
-          have done.
+          <Link href="/#contact">Contact me</Link> if you have any questions or
+          if you would like to know about other types of projects I have done.
         </p>
       </header>
       <div className="cards-section__list-wrapper">

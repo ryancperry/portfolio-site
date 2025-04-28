@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import styles from './Home.module.scss';
+import Link from 'next/link';
 
 export default function HomeBanner() {
   return (
@@ -29,7 +30,7 @@ export default function HomeBanner() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           Want to work together?{' '}
-          <a href="mailto:perry.ryan.c@gmail.com">Send me an email</a>.
+          <Link href="/#contact">Send me an message</Link>.
         </motion.p>
       </div>
     </header>

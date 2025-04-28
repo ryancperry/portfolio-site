@@ -1,0 +1,48 @@
+$color-bg: var(--color-primary-lightest);
+$color-shadow-light: #fff;
+$color-shadow-dark: #a3b1c6;
+$color-border: var(--gray-100);
+$radius: 12px;
+
+.input--neumorphic {
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow:
+    0.25rem 0.25rem 0.5rem var(--gray-100),
+    -0.25rem -0.25rem 0.5rem var(--white-95),
+    inset 0 0 0 var(--black-15),
+    inset 0 0 0 var(--white-95);
+  font-size: 1rem;
+  outline: none;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 0 0 $color-shadow-dark,
+      0 0 0 $color-shadow-light,
+      inset 0.125rem 0.125rem 0.25rem $color-shadow-dark,
+      inset -0.125rem -0.125rem 0.25rem $color-shadow-light;
+  }
+
+  &::placeholder {
+    color: var(--gray-300);
+  }
+}
+
+.label--neumorphic {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group--neumorphic:has(.input--neumorphic[required]) label::after {
+  color: var(--danger-red);
+  content: ' *';
+  font-weight: 700;
+}
+
+.form-group--neumorphic {
+  margin-bottom: 1.5rem;
+}

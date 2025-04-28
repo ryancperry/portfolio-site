@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { List, ListItem } from '@/components/Lists';
 import { Heading } from '@/components/Headings';
 import experienceList from '@/content/experience';
@@ -33,8 +34,8 @@ export default function ExperienceSection() {
         <p className="cards-section__text">
           This list is narrowed to my most relevant experience with
           commonly-used technology in modern web development.{' '}
-          <a href="mailto:perry.ryan.c@gmail.com">Email me</a> if you have any
-          specific questions. I might be able to help or know someone who can.
+          <Link href="/#contact">Contact me</Link> if you have any specific
+          questions. I might be able to help or know someone who can.
         </p>
       </header>
       <List>

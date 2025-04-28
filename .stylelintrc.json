@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-standard-scss"],
-  "plugins": ["stylelint-scss"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
   "rules": {
     "indentation": 2,
     "number-leading-zero": "always",
@@ -8,6 +8,7 @@
     "color-hex-case": "lower",
     "block-no-empty": true,
     "no-descending-specificity": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "order/properties-alphabetical-order": true
   }
 }

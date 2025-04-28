@@ -6,23 +6,27 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
 
 .button {
   border-radius: 0.75rem;
-  padding: 0.75rem 1.25rem;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
+  padding: 0.75rem 1.25rem;
   text-align: center;
   text-decoration: none;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
 }
 
 .button--neumorphic {
   background: var(--white-90);
   border: 0 none;
-  color: var(--color-primary);
   box-shadow:
     0.25rem 0.25rem 0.5rem var(--gray-100),
     -0.25rem -0.25rem 0.5rem var(--white-95),
     inset 0 0 0 var(--black-15),
     inset 0 0 0 var(--white-95);
+  color: var(--color-primary);
   transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -44,13 +48,13 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
 
 .button--neumorphic-dark {
   background: var(--color-primary);
-  color: var(--white);
   border: none;
-  cursor: pointer;
   box-shadow:
     -3px -3px 3px $light-shadow, // top-left light
     4px 4px 8px $dark-shadow; // bottom-right dark
 
+  color: var(--white);
+  cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
@@ -69,9 +73,9 @@ $dark-shadow: color.adjust($bg, $lightness: -10%); // for bottom-right shadow
 }
 
 .text-link {
+  border-bottom: 1px solid currentcolor;
   display: inline-block;
   font-weight: 600;
-  border-bottom: 1px solid currentcolor;
   letter-spacing: 0.05rem;
   opacity: 0.8;
   padding-bottom: 0.25rem;

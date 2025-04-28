@@ -4,41 +4,41 @@
 }
 
 .navbar__nav {
+  align-items: center;
+  color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 1rem;
-  color: white;
 
   .navbar__logo a {
-    display: flex;
-    max-width: 5rem;
-    max-height: 2rem;
     color: white;
+    display: flex;
+    max-height: 2rem;
+    max-width: 5rem;
     text-decoration: none;
   }
 
   .navbar__list {
-    list-style: none;
     display: flex;
     gap: 20px;
+    list-style: none;
     padding-left: 1rem;
 
     a {
-      text-decoration: none;
       font-weight: 600;
       padding: 0.5rem 0;
       position: relative;
+      text-decoration: none;
 
       &::after,
       &::before {
-        content: '';
-        width: 0%;
-        height: 0.125rem;
         background-color: var(--color-primary-lighter);
-        position: absolute;
         bottom: 0;
+        content: '';
+        height: 0.125rem;
+        position: absolute;
         transition: width 0.1s ease-in-out;
+        width: 0%;
       }
 
       &::after {

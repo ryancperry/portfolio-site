@@ -1,12 +1,12 @@
 .card {
   background: var(--white-90);
   border-radius: 1rem;
-  padding: 1rem;
   box-shadow:
     0.5rem 0.5rem 1rem var(--black-15),
     -0.5rem -0.5rem 1rem var(--white-95),
     inset 0 0 0 var(--black-15),
     inset 0 0 0 var(--white-95);
+  padding: 1rem;
   transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -36,8 +36,8 @@
 
 .card__text {
   font-size: var(--font-size-2);
-  margin-bottom: 1rem;
   line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .cards-section__section {

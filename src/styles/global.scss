@@ -5,22 +5,26 @@
 @use './layout';
 @use './cards';
 @use './banners';
+@use './forms';
 @use '@/components/SocialLinks/SocialLinks';
 @use '@/components/Footer/Footer';
 @use '@/components/Navbar/Navbar';
 @use '@/components/Lists/Lists';
+@use '@/components/Spinner/Spinner';
+@use '@/components/SuccessIcon/SuccessIcon';
+@use '@/components/ContactForm/ContactForm';
 
 body {
-  margin: 0;
-  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {

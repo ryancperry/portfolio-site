@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import NavbarLink from './NavbarLink';
 import Logo from '@/components/svgs/Logo';
 
 export default function Navbar() {

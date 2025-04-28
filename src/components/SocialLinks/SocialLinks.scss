@@ -7,6 +7,7 @@
 }
 
 .social-links__link {
+  align-items: center;
   border-radius: 50%;
   box-shadow:
     0.25rem 0.25rem .5rem var(--gray-100),
@@ -15,9 +16,8 @@
     inset 0 0 0 var(--white-95);
   color: var(--color-primary-light);
   display: grid;
-  align-items: center;
-  justify-content: center;
   height: 2.5rem;
+  justify-content: center;
   transition: all 0.1s ease-in-out;
   width: 2.5rem;
 

@@ -17,13 +17,13 @@
   .list__item {
     background: var(--bg-light);
     border-radius: 10px;
-    padding: 0.3rem 0.75rem;
-    margin: 0.25rem;
-    font-size: var(--font-size-1);
     box-shadow:
       inset 2px 2px 5px var(--gray-100),
       inset -2px -2px 5px var(--white);
     color: var(--color-primary);
+    font-size: var(--font-size-1);
+    margin: 0.25rem;
+    padding: 0.3rem 0.75rem;
   }
 }
 
