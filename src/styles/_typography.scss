@@ -81,3 +81,15 @@ p a {
   font-weight: 600;
   text-decoration: underline;
 }
+
+.text--danger {
+  color: var(--danger-red);
+}
+
+.text--success {
+  color: var(--success-green);
+}
+
+.text--warning {
+  color: var(--warning-yellow);
+}

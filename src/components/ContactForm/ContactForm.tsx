@@ -15,12 +15,23 @@ export default function ContactForm() {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const messageDict = {
+    Success: 'Your message was sent!',
+    Error: 'There was an error sending your message. Please try again.',
+    Sending: 'Sending...',
+    default: '',
+  };
+
+  const getMessage = (key: string) => {
+    return messageDict[key as keyof typeof messageDict] || messageDict.default;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
 
     setIsSubmitting(true);
-    setStatus('Sending...');
+    setStatus('Sending');
 
     const formData = {
       name: nameRef.current?.value || '',
@@ -37,15 +48,15 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
-        setStatus('Message sent!');
+        setStatus('Success');
         if (nameRef.current) nameRef.current.value = '';
         if (emailRef.current) emailRef.current.value = '';
         if (messageRef.current) messageRef.current.value = '';
       } else {
-        setStatus('Something went wrong.');
+        setStatus('Error');
       }
     } catch (err) {
-      setStatus('Something went wrong.');
+      setStatus('Error');
     } finally {
       setIsSubmitting(false);
     }
@@ -93,16 +104,26 @@ export default function ContactForm() {
           <>
             <Spinner /> Sending
           </>
-        ) : status === 'Message sent!' ? (
-          <>
-            Sent <SuccessIcon />
-          </>
         ) : (
           'Send'
         )}
       </button>
-
-      {status && status !== 'Message sent!' && <p>{status}</p>}
+      {['Success', 'Error'].includes(status) && (
+        <div className="form__status-wrapper">
+          <p>
+            {status === 'Success' && <SuccessIcon />}
+            <b
+              className={
+                status === 'Success' ? 'text--success' : 'text--danger'
+              }
+            >
+              {' '}
+              {status}:
+            </b>{' '}
+            {getMessage(status)}
+          </p>
+        </div>
+      )}
     </form>
   );
 }
