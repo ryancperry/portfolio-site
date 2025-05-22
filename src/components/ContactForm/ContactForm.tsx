@@ -12,25 +12,25 @@ export default function ContactForm() {
   const companyRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
-  const [status, setStatus] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState('default');
 
   const messageDict = {
     Success: 'Your message was sent!',
     Error: 'There was an error sending your message. Please try again.',
     Sending: 'Sending...',
     default: '',
-  };
+  } as const;
 
-  const getMessage = (key: string) => {
-    return messageDict[key as keyof typeof messageDict] || messageDict.default;
+  type Messages = typeof messageDict;
+  type MessageKeys = keyof Messages;
+
+  const getMessage = (key: MessageKeys) => {
+    return messageDict[key] || messageDict.default;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (isSubmitting) return;
-
-    setIsSubmitting(true);
+    if (status === 'Sending') return;
     setStatus('Sending');
 
     const formData = {
@@ -57,8 +57,6 @@ export default function ContactForm() {
       }
     } catch (err) {
       setStatus('Error');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -98,9 +96,9 @@ export default function ContactForm() {
       <button
         className="button button--neumorphic"
         type="submit"
-        disabled={isSubmitting}
+        disabled={status === 'Sending'}
       >
-        {isSubmitting ? (
+        {status === 'Sending' ? (
           <>
             <Spinner /> Sending
           </>
@@ -120,7 +118,7 @@ export default function ContactForm() {
               {' '}
               {status}:
             </b>{' '}
-            {getMessage(status)}
+            {getMessage(status as MessageKeys)}
           </p>
         </div>
       )}

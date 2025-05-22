@@ -11,6 +11,7 @@ Welcome to my personal portfolio site, built with Next.js, React, and SCSS. This
 - Vercel (Deployment)
 - ESLint, Prettier, Stylelint
 - Vercel Analytics and Speed Insights
+- Resend for contact form
 
 ## 🚀 Getting Started
 
