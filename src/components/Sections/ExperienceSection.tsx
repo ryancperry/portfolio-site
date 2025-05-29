@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { List, ListItem } from '@/components/Lists';
 import { Heading } from '@/components/Headings';
 import experienceList from '@/content/experience';
-import { slugifyString } from '@/utils/stringFunctions';
+import { slugifyString } from '@/lib/string-functions';
 
 interface CompanyLinkProps {
   companyUrl: string;

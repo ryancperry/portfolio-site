@@ -1,4 +1,8 @@
-const slugifyString = (str = '') => {
+const capitalize = (str: string = ''): string => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const slugifyString = (str: string = ''): string => {
   return str
     .toString()
     .toLowerCase()
@@ -9,4 +13,4 @@ const slugifyString = (str = '') => {
     .replace(/-+$/, ''); // Trim - from end of text
 };
 
-export { slugifyString };
+export { capitalize, slugifyString };

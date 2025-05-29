@@ -6,7 +6,7 @@ import { List, ListItem } from '@/components/Lists';
 import CardLink from '@/components/Card/CardLink';
 import { Heading } from '@/components/Headings';
 import projectList from '@/content/projects';
-import { slugifyString } from '@/utils/stringFunctions';
+import { slugifyString } from '@/lib/string-functions';
 
 export default function ProjectSection() {
   const { visibleItems, expanded, toggle } = useToggleList(projectList, 3);
