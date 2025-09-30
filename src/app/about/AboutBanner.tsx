@@ -27,7 +27,7 @@ export default function AboutBanner() {
             , where I build software solutions for clients.
           </p>
           <p>
-            With more than eight years in web development, I’ve built and
+            With more than ten years in web development, I’ve built and
             optimized web experiences for a range of clients, from startups to
             enterprise-level businesses. I take pride in building fast,
             accessible, and visually polished applications. My code is clean,
